@@ -18,43 +18,49 @@
 						
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 								<h3 class="register-heading">Prédiction</h3>
-								<div class="row register-form">
+								<form class="row register-form" action="#">
 							
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="number" class="form-control" placeholder="Nombre de Premier critères *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="number" class="form-control" placeholder="Nombre de Deuxième critères *" value="" />
-                                        </div>
+                                    <div class="col-md-12">
+                                       <div class="form-group">
+                                            <select id="select_regle" class="form-control">
+                                                <option class="hidden"  selected disabled>Sélectionner la règle a utilisé</option>
+													
+													    {% for cell in my_string %}
+														<option value="{{cell[0]|safe}}">Population selon {{cell[0]|safe}} </option>
+														{% endfor %}
+                                            </select>
+											<label id="selected_regle" class="p-1"></label>
+										</div>	
+                                        <!-- <div class="form-group"> -->
+                                            <!-- <input type="number" class="form-control" placeholder="Nombre de Deuxième critères *" value="" /> -->
+                                        <!-- </div> -->
 
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <select class="form-control">
-                                                <option class="hidden"  selected disabled>Logement</option>
-                                                <option>T1</option>
-                                                <option>T2</option>
-                                                <option>T3</option>
-												<option>T4</option>
-                                                <option>T5</option>
-                                            </select>
-                                        </div>
 
-										<div class="form-group">
-                                            <select class="form-control">
-                                                <option class="hidden"  selected disabled>Autre critères</option>
-                                                <option>Nombre de bar</option>
-                                                <option>Nombre de master connu</option>
-                                                <option>Nombre d'emploi</option>
-                                            </select>
-                                        </div>
-									
-                                        <!-- <input type="submit" class="btnRegister"  value="Prédire" href="/" /> -->
-										<a id="prediction" href="#success" class="btnRegister" data-toggle="modal"> Prédire </a>
+
+
+
+									<div class="col-md-12">
+                                      	<select id="select_temps" class="form-control">
+                                                <option class="hidden"  selected disabled>Précisez la période</option>						
+                                        </select>			
+                                       
+				
                                     </div>
 								
-                                </div>
+                                    <div class="col-md-12" id="criteriasValues">
+                                      			
+                                       
+                                    </div>
+									
+
+									
+									<div class="col-md-12">
+                                         <!-- <input type="submit" class="btnRegister"  value="Prédire" href="/" /> -->
+										<input type="button" id="prediction" class="btnRegister" data-target="#success" data-toggle="modal" onClick="getResult(event);" value="Prédire"/> 
+                                    </div>
+								
+                                </form>
                             </div>
                     
                     </div>
@@ -86,5 +92,6 @@
 				
 
 </div>
+<div id="predictionResult" ></div>
 </div>
 {% endblock %}

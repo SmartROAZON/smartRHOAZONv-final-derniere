@@ -1,0 +1,21 @@
+Population / H;1 pièce;Employé 55-64/Total 
+Population / F;1 pièce;Employé 55-64/Total 
+Nombre de ménage;1 pièce;Employé 55-64/Total 
+Couple sans enfants ;1 pièce;Employé 55-64/Total 
+Couple avec enfants;1 pièce;Employé 55-64/Total 
+Ménage d'une seule personne ;1 pièce;Employé 55-64/Total 
+Famille monoparentales;1 pièce;Employé 55-64/Total 
+Population / H;1 pièce;Employé 15-24/Total
+Population / F;1 pièce;Employé 15-24/Total
+Nombre de ménage;1 pièce;Employé 15-24/Total
+Couple sans enfants ;1 pièce;Employé 15-24/Total
+Couple avec enfants;1 pièce;Employé 15-24/Total
+Ménage d'une seule personne ;1 pièce;Employé 15-24/Total
+Famille monoparentales;1 pièce;Employé 15-24/Total
+Population / H;1 pièce;Employé 25-54/Total
+Population / F;1 pièce;Employé 25-54/Total
+Nombre de ménage;1 pièce;Employé 25-54/Total
+Couple sans enfants ;1 pièce;Employé 25-54/Total
+Couple avec enfants;1 pièce;Employé 25-54/Total
+Ménage d'une seule personne ;1 pièce;Employé 25-54/Total
+Famille monoparentales;1 pièce;Employé 25-54/Total

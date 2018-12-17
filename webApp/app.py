@@ -3,13 +3,10 @@ import sys
 from flask import Flask,flash, request, redirect, url_for, session
 from flask import render_template
 from werkzeug.utils import secure_filename
-
-
 from flask_cache import Cache
 import subprocess
 import importlib
-
-
+import json
 
 app = Flask(__name__)
 
@@ -31,17 +28,63 @@ app.config.update(
 with app.test_request_context():
     print(url_for('static', filename='css/style.css'))
     print(url_for('static', filename='css/bootstrap.min.css'))
-    print(url_for('static', filename='js/jquery-1.11.1.min.js'))
+    #print(url_for('static', filename='js/jquery-1.11.1.min.js'))
     print(url_for('static', filename='js/bootstrap.min.js'))
     print(url_for('static', filename='js/searchUI.js'))
+    print(url_for('static', filename='js/jquery_v3.3.1.min.js'))
     print(url_for('static', filename='img/plus.png'))
     print(url_for('static', filename='img/moins.png'))
     print(url_for('static', filename='img/equal.jpg'))
     print(url_for('static', filename='img/patientez.gif'))
     print(url_for('static', filename='img/searchicon.png'))
     
+################## Affichage résultat de calcul prediction
+@app.route('/getResult', methods=['POST'])
+def predictionFutureResult():
+    if request.method == "POST":
+        data = request.get_json(force=True)
+        listElements=[]
+        for element in data:
+            listElements.append([element,data[element]])
 
-################## calcul de la régression, affichage de résultat
+        for val in listElements:
+            val[0]=val[0].replace(" ","--").replace("\\","--").replace("/","--")
+
+        st=""
+        for val in listElements:
+            st+=" "+val[0]+"_"+val[1]
+            
+        print(st)    
+        
+        
+                    
+        
+        command="python pyScripts/calcul_prediction.py{0}".format(st)
+
+        res=[]
+        for line in os.popen(command).readlines():
+            res.append(eval(line))
+        
+        
+        return render_template('resultCalculPrediction.html',result=res)
+################## Calcul Prediction
+@app.route('/criteriaForm')
+def criteriaForm():
+    command="python pyScripts/nombre_regle_cree.py"
+
+    res=[]
+    for line in os.popen(command).readlines():
+        res.append(eval(line))
+
+    newRes=[]
+    for item in res[0]:
+        newRes.append([','.join(item.split("-avec-"))])
+
+    print(newRes)
+    return render_template('criteria_specification.html',my_string=newRes)
+
+
+################## calcul de la régression, et redirection vers affichage de résultat
 @app.route('/calculRegle', methods=['POST'])
 def calculRegle():
     if request.method == 'POST':
@@ -52,15 +95,21 @@ def calculRegle():
             #print(request.form.get('crit_{0}'.format(i)))
             #print(request.form.get('file_{0}'.format(i)))
             files.append(request.form.get('file_{0}'.format(i)))
-            st.append(request.form.get('file_{0}'.format(i))+"_"+request.form.get('crit_{0}'.format(i)).split("_")[1])
+            st.append(request.form.get('file_{0}'.format(i))+"_"+request.form.get('crit_{0}'.format(i)))
 
         argu=""+' '.join((str(e) for e in st))
+        print(argu)
         command="python pyScripts/calcul_regression.py {0}".format(argu)
-        
+
+        res=[]
         for line in os.popen(command).readlines():
-            #res.append(eval(line))
-            print(eval(line))
-    return redirect('generationRegle')
+            res.append(eval(line))
+
+        
+
+    #return redirect('generationRegle')
+    return render_template("resultCalculRegression.html",my_string=res)
+    #return redirect(url_for(resultatCalculRegression,regResult=res))
 
 
 
@@ -169,11 +218,6 @@ def executeScript(firstCrt,secondCrt):
 	res=os.popen("python pyScripts/hello.py {0} {1}".format(firstCrt,secondCrt)).readlines()
 	print(res)
 	return render_template('results.html',my_string=res)
-	
-	
-@app.route('/criteriaForm')
-def criteriaForm():
-    return render_template('criteria_specification.html')
 
 
 @app.route('/drag')

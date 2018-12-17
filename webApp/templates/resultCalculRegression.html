@@ -1,0 +1,96 @@
+
+{% extends "index.html" %}
+
+{% block content %}
+
+<div class="row">
+
+<h2 style="padding:20px;">
+Représentation graphique des données et la règle.
+</h2>
+
+{% if my_string[0] is defined %}
+
+	<div class="col-md-10" style="padding-bottom:40px;">
+		<div class="form-group">
+		
+		 
+			
+		
+			<select id="graph_select" name="" class="col-md-6" >
+				<option value="graphs_line"> représentation sous forme de ligne </option>
+				<option value="graphs_bar"> représentation histograme </option>
+				<option value="graphs_pie"> représentation camembert </option>
+			</select>
+			<a class="p-l-2 btn btn-success" href="" name="{{my_string[0][0][3]|join('*')}}"> Valider la règle </a>
+		</div>
+	</div>
+
+
+
+
+
+<!-- Affichage graphique  -->
+<div style="left:50%;padding:30px;">
+
+
+
+  
+	
+	
+	<div id="graphs_pie" class="hidden">
+	
+			{% for item1 in my_string[0][0][0] %}    
+			<!-- item1[0] year item1[1] => [year,img] -->
+				 {% if loop.index <= 1 %}
+					   {% set classhidden = "" %}
+				 {% else %}
+					   {% set classhidden = "hidden" %}
+				 {% endif %}
+				<div class="{{classhidden}}" id="{{item1[0]|safe}}" style="border:1px;">
+				<table class="table table-hover">
+				 <thead>
+					<tr>
+						<th class="bg-success mx-auto" scope="col" style="text-align:center.">
+							{{item1[0]|safe}}
+						</th>
+					</tr>
+				  </thead>
+				  <tbody>
+				  <tr>
+					  <td>
+						{{item1[1]|safe}}	
+					  </td>
+				  </tr>
+				   </tbody>
+				</table>
+				</div>
+        
+			{% endfor %}
+	</div>	
+	<div id="graphs_line">	
+
+			{{my_string[0][0][1]|safe}}     
+			
+
+			
+	</div>
+	
+	<div id="graphs_bar" class="hidden">	
+			{{my_string[0][0][2]|safe}}     
+			
+	</div>
+			<!-- {{my_string[0][0][3]|safe}} -->
+	</div>
+		
+		
+    
+  
+{% else %}
+		<div style="text-align:center;position: absolute;text-align: center;left: 42%;top: 70%;">
+		  <p>ERREUR ..</p>
+	</div>
+{% endif %}
+
+</div>
+{% endblock %}

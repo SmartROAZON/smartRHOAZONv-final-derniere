@@ -1,0 +1,45 @@
+<div class="row">
+{% if result is defined %}
+<h2 style="padding:20px;">
+Résultat des prédictions pour {{result[0]|safe}}
+</h2>
+
+
+
+			<table class="table table-hover" >
+				 <thead>
+					<tr>{% for item in result %} 
+						<th class="bg-info mx-auto" scope="col" style="text-align:center.">
+							{{item[0]|safe}}
+						</th>
+						{% endfor%}
+					</tr>
+				  </thead>
+				  <tbody>
+				  <tr>
+						{% for item in result %} 
+					  <td>
+							{% for val in item[1] %} 
+								<label>{{val|safe}}</label>
+							{% endfor%}
+					  </td>
+					  {% endfor%}
+				  </tr>
+				   </tbody>
+				</table>
+			   
+				
+				
+				<div style="padding:30px;">
+				
+				</div>
+			
+
+{% else %}
+		<div style="text-align:center;position: absolute;text-align: center;left: 42%;top: 70%;">
+		  <p>ERREUR ..</p>
+	</div>
+{% endif %}
+
+</div>
+

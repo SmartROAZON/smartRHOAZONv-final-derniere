@@ -146,6 +146,7 @@ body {
 
 /* form */
 .register{
+	width: 1400px !important;
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
     margin-top: 3%;
     padding: 3%;

@@ -34,9 +34,9 @@ def fig_to_base64(fig):
     return base64.b64encode(img.getvalue())
 
 
-data_etudiant=pd.read_csv("..\data\dataSet_NbrEtudiant_sexe.csv", sep=';')
+data_etudiant=pd.read_csv("..\..\data\dataSet_NbrEtudiant_sexe.csv", sep=';')
 data_etudiant["Nombre Etudiant Total"]=data_etudiant["Nombre Etudiant Femme"]+data_etudiant["Nombre Etudiant Male"]
-data_logement=pd.read_csv("..\data\\NumberConstructionPerYear.csv", sep=';')
+data_logement=pd.read_csv("..\..\data\\NumberConstructionPerYear.csv", sep=';')
 ##plt.plot(data_logement['year'], data_logement['NumberConstructionPeerYear'], color='green', linewidth=3)
 ##plt.legend()
 
@@ -71,9 +71,7 @@ ax.set_xlabel('Année',fontsize=15)
 ax.set_ylabel('Nombre de construction',fontsize=15)
 
 encoded = fig_to_base64(fig)
-my_html = '<img src="data:image/png;base64, {}">'.format(encoded.decode('utf-8'))
-
-print(my_html)
+my_html1 = '<img src="data:image/png;base64, {}">'.format(encoded.decode('utf-8'))
 
 
 ############ regression lineaire
@@ -90,7 +88,7 @@ predicted = model.predict(np.array(x[:,0]))
 
 ######## graphics
 fig, ax = plt.subplots()
-ax.scatter([x[:,0]],[y[:,0]],  color='black')
+ax.scatter(dataframe.iloc[:,:2],data_logement.iloc[:dataframe.size-1,:2],  color='black')
 ax.scatter([x[:,0]],predicted,  color='blue')
 ax.plot(np.array(x[:,0]),b+m*np.array(x[:,0]) , color='red', linewidth=3)
 
@@ -99,5 +97,35 @@ ax.set_xlabel('Nombre Etudiant Total',fontsize=15)
 ax.set_ylabel('Nombre de construction',fontsize=15)
 
 encoded = fig_to_base64(fig)
-my_html = '<img src="data:image/png;base64, {}">'.format(encoded.decode('utf-8'))
-print(my_html)
+my_html2 = '<img src="data:image/png;base64, {}">'.format(encoded.decode('utf-8'))
+
+
+print([x[:,0]],[y[:,0]])
+
+print(dataframe.iloc[:,:])
+
+# write-html-2-windows.py
+
+import webbrowser
+
+f = open('helloworld.html','w')
+
+message = """<html>
+<head></head>
+<body><p>Hello World!</p>
+{0}
+{1}
+</body>
+</html>""".format(my_html1,my_html2)
+
+f.write(message)
+f.close()
+
+webbrowser.open_new_tab('helloworld.html')
+
+
+
+
+
+
+

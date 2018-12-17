@@ -102,6 +102,7 @@ function allowDrop(ev) {
 
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
+  console.log("target id "+ev.target.id)
 }
 
 function drop(ev) {
@@ -115,11 +116,11 @@ function drop(ev) {
       }
       else {
       ev.target.appendChild(document.getElementById(data));
-	  console.log(ev.target.children[2].id+" - "+ev.target.children[2].getAttribute('name'));
+	  console.log(ev.target.children[2].id.split('**')[1]+" - "+ev.target.children[2].getAttribute('name'));
 	  
 	  console.log(ev.target.id)
 	  
-	  document.getElementById("crit_"+ev.target.id).value=ev.target.children[2].id;
+	  document.getElementById("crit_"+ev.target.id).value=ev.target.children[2].id.split('**')[1];
 	  document.getElementById("file_"+ev.target.id).value=ev.target.children[2].getAttribute('name');
 	  
 	  var form = document.getElementById('regle');
@@ -248,7 +249,7 @@ document.getElementById("nbrDiv").value=divs.length;
   <ul id="myUL" class="list-group" style="overflow-y:scroll;">
   {% for object in listFiles %}
 					{% for item in object[1] %}
-<li id="c_{{item[0]|safe}}" name="{{object[0]|safe}}" draggable="true" ondblclick="doubleClick(event)" ondragstart="drag(event)" class="lia list-group-item">
+<li id="{{object[0]|safe}}c**{{item[0]|safe}}" name="{{object[0]|safe}}" draggable="true" ondblclick="doubleClick(event)" ondragstart="drag(event)" class="lia list-group-item">
 {{item[1]|safe}} 
 </li> 
 					{% endfor %}		
@@ -289,7 +290,7 @@ document.getElementById("nbrDiv").value=divs.length;
 
 <form class="form-inline" id ="regle" action="/calculRegle" method="post">
 <input type="hidden"  id="nbrDiv" name="nbrDiv" value="-1">
-<input style="position: absolute; right: 3%;" class="btn btn-info" type="submit" value="Générer la règle">  </input>
+<input style="position: absolute; right: 3%;" class="btn btn-info" type="submit" value="Générer la règle" data-toggle="modal" data-target="#generation_regle">  </input>
 
 <div id="1" class="dropy" ondrop="drop(event)" ondragover="allowDrop(event)">
  <input type="hidden"  id="crit_1" name="crit_1">
@@ -305,6 +306,24 @@ document.getElementById("nbrDiv").value=divs.length;
 </form>
 
 
+
+<div class="modal fade" id="generation_regle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header modal-header-success">
+										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+									</div>
+									<div class="modal-body">
+										<img src="/static/img/patientez.gif" width="200" height="50" style="background-color:white;left:50%"/>
+
+									</div>
+									
+									<div class="modal-footer">
+									<!-- <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button> -->
+									</div>
+								</div><!-- /.modal-content -->
+							</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 </div>
 {% endblock %}
