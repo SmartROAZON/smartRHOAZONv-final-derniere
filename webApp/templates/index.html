@@ -7,18 +7,19 @@
 <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
 <script src="/static/js/jquery_v3.3.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
 <script src="/static/js/searchUI.js"></script>
 <!-- <script src="/static/js/moment.min.js"></script> -->
 <link rel="stylesheet" type="text/css" href="/static/css/style.css">
 
+<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+<script src="/static/js/poper1.14.3.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
 
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-  <a class="navbar-brand" href="" disabled>Smart ROAZON</a>
+  <a class="navbar-brand" href="/" disabled><h2 style="color:Blue;">Smart ROAZON</h2></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -50,19 +51,29 @@
       </li>
 
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <form target="_blank" class="form-inline my-2 my-lg-0" method="get" action="https://www.google.com/search">
+      <input class="form-control mr-sm-2" type="search" name="q" size="31" maxlength="255" value=""
+	  placeholder="Rechercher sur google..." aria-label="Rechercher">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
     </form>
   </div>
 </nav>
-<div class="container">
+<div class=""></div>
+<div class="container h-100">
 
 	
-	
+
 {% block content %}
 {% endblock %}
+
 </div>
+
+<div class=""></div>
+
+<footer class="foot footer fixed-bottom">
+   Ceci est un POC, réalisé par des étudiants de l'ISTIC
+</footer>
+
 </body>
 <script>
 
@@ -189,7 +200,7 @@ $('#select_temps').on('change',function(ev) {
 	items = $("#selected_regle").text().split(":")[1].split(",");
 	year = ev.target.value
 	$('#criteriasValues').empty();
-	$('#criteriasValues').append('<label class="p-1"> Veuillez remplir les valeur des critères pour prédire la population dans '+year+ ' ans</label>');
+	$('#criteriasValues').append('<label class="p-1"> Veuillez remplir les valeur des critères pour prédire la population en '+year+ ' ans</label>');
 	
 		items.forEach(function(item){
 		

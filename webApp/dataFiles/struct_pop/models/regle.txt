@@ -1,21 +1,14 @@
-Population / H;1 pièce;Employé 55-64/Total 
-Population / F;1 pièce;Employé 55-64/Total 
-Nombre de ménage;1 pièce;Employé 55-64/Total 
-Couple sans enfants ;1 pièce;Employé 55-64/Total 
-Couple avec enfants;1 pièce;Employé 55-64/Total 
-Ménage d'une seule personne ;1 pièce;Employé 55-64/Total 
-Famille monoparentales;1 pièce;Employé 55-64/Total 
-Population / H;1 pièce;Employé 15-24/Total
-Population / F;1 pièce;Employé 15-24/Total
-Nombre de ménage;1 pièce;Employé 15-24/Total
-Couple sans enfants ;1 pièce;Employé 15-24/Total
-Couple avec enfants;1 pièce;Employé 15-24/Total
-Ménage d'une seule personne ;1 pièce;Employé 15-24/Total
-Famille monoparentales;1 pièce;Employé 15-24/Total
-Population / H;1 pièce;Employé 25-54/Total
-Population / F;1 pièce;Employé 25-54/Total
-Nombre de ménage;1 pièce;Employé 25-54/Total
-Couple sans enfants ;1 pièce;Employé 25-54/Total
-Couple avec enfants;1 pièce;Employé 25-54/Total
-Ménage d'une seule personne ;1 pièce;Employé 25-54/Total
-Famille monoparentales;1 pièce;Employé 25-54/Total
+Population / H;Employé 15-24/Homme ;Nombre de logement 
+Population / F;Employé 15-24/Homme ;Nombre de logement 
+Nombre de ménage;Employé 15-24/Homme ;Nombre de logement 
+Couple sans enfants ;Employé 15-24/Homme ;Nombre de logement 
+Couple avec enfants;Employé 15-24/Homme ;Nombre de logement 
+Ménage d'une seule personne ;Employé 15-24/Homme ;Nombre de logement 
+Famille monoparentales;Employé 15-24/Homme ;Nombre de logement 
+Population / H;Employé 15-24/Homme ;Employé 15-24/Femme;1 pièce
+Population / F;Employé 15-24/Homme ;Employé 15-24/Femme;1 pièce
+Nombre de ménage;Employé 15-24/Homme ;Employé 15-24/Femme;1 pièce
+Couple sans enfants ;Employé 15-24/Homme ;Employé 15-24/Femme;1 pièce
+Couple avec enfants;Employé 15-24/Homme ;Employé 15-24/Femme;1 pièce
+Ménage d'une seule personne ;Employé 15-24/Homme ;Employé 15-24/Femme;1 pièce
+Famille monoparentales;Employé 15-24/Homme ;Employé 15-24/Femme;1 pièce

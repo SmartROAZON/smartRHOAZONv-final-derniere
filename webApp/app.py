@@ -28,15 +28,21 @@ app.config.update(
 with app.test_request_context():
     print(url_for('static', filename='css/style.css'))
     print(url_for('static', filename='css/bootstrap.min.css'))
-    #print(url_for('static', filename='js/jquery-1.11.1.min.js'))
+    print(url_for('static', filename='js/poper1.14.3.min.js'))
     print(url_for('static', filename='js/bootstrap.min.js'))
     print(url_for('static', filename='js/searchUI.js'))
     print(url_for('static', filename='js/jquery_v3.3.1.min.js'))
     print(url_for('static', filename='img/plus.png'))
     print(url_for('static', filename='img/moins.png'))
     print(url_for('static', filename='img/equal.jpg'))
+    print(url_for('static', filename='img/Rennes_Métropole.png'))
+    print(url_for('static', filename='img/istic.png'))
+    print(url_for('static', filename='img/irisa.png'))
+    print(url_for('static', filename='img/druid.png'))
     print(url_for('static', filename='img/patientez.gif'))
     print(url_for('static', filename='img/searchicon.png'))
+    print(url_for('static', filename='img/fusee.png'))
+    print(url_for('static', filename='img/rennes_bg.jpg'))
     
 ################## Affichage résultat de calcul prediction
 @app.route('/getResult', methods=['POST'])

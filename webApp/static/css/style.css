@@ -53,6 +53,23 @@ body {
     padding:0;
 }
 
+/* .container{ */
+	/* background: white; */
+/* } */
+/* body::after { */
+	/* background-image: url(/static/img/rennes_bg.jpg); */
+	  /* content: ""; */
+	  /* opacity: 0.1; */
+	  /* position: absolute; */
+	  /* top: 0; */
+	  /* bottom: 0; */
+	  /* right: 0; */
+	  /* left: 0; */
+	  /* z-index: -1; */
+    /* background-size: cover; */
+/* } */
+
+
 .btn-generate{
 	position:relative;
     color:green;
@@ -140,15 +157,45 @@ body {
   100% { transform: rotate(360deg); }
 }
 
+.foot{
+	
+	background: -webkit-linear-gradient(left, #b4d1ef, #ffffff);
+	/* background: -webkit-linear-gradient(left, #3931af, #00c6ff); */
+	padding: 10px;
+	text-align:center;
+	
+}
+
+.card:hover {
+  /* background-color:#b4d1ef; */
+  background: -webkit-linear-gradient(right, #b4d1ef, #ffffff);
+}
 
 
+nav {
+  background: -webkit-linear-gradient(left, #b4d1ef, #ffffff);
+  /* background: -webkit-linear-gradient(left, #3931af, #00c6ff); */
+}
+
+.nav-link{
+	font-size: x-large;
+	color:rgba(0, 0, 0,0.80)!important;
+    font-family: sans-serif;
+    display: block;
+    padding: .5rem 1rem!important;
+}
+
+.nav-link:hover{
+	color:red!important;
+}
 
 
 /* form */
 .register{
 	width: 1400px !important;
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
-    margin-top: 3%;
+	border-radius: 20px;
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff)!important;
+    margin-top: 6%;
     padding: 3%;
 }
 .register-left{
@@ -210,6 +257,11 @@ body {
     cursor: pointer;
 	text-align:center;
 }
+.btnRegister:hover{
+	color:white;
+	background-color:green;
+	
+}
 .register .nav-tabs{
     margin-top: 3%;
     border: none;
@@ -243,3 +295,23 @@ body {
     color: #495057;
 }
 /* end form */
+
+.leftPad{
+	position:absolute;
+	width:15%;
+	height:90%;
+	max-width:15%;
+	background-image:url('/static/img/rennes_bg.jpg');
+	background-size:cover;
+}
+
+.rightPad{
+	position:fixed;
+	top:1%;
+	right:1%;
+	width:15%;
+	height:90%;
+	max-width:15%;
+	background-image:url('/static/img/rennes_bg.jpg');
+	background-size:cover;
+}
