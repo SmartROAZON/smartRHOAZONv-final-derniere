@@ -19,10 +19,19 @@ Et ensuite :
 
 
 
-
+Si cela ne suffie pas, créer votre propre environnement, et lancer l'app.py
 ### Pour Créer l'environnement de l'application
-Installer les différentes dépendances qui se trouve dans le dossier "dependencies", à l'intérieur de se dossier se trouve un fichier requirment.txt et un dossier wheels
+Commencer par :
+#### pip install virtualenv
+Apres :
+#### Scripts\activate
+Ensuite, Installer les différentes dépendances qui se trouve dans le dossier "dependencies", à l'intérieur de se dossier se trouve un fichier requirment.txt et un dossier wheels
 Vous pouvez installer ces dépendances à partir des fichiers whl par la commande suivante à la racine du projet :
 #### pip install -r dependencies/requirements.txt --find-links dependencies/wheelsdependencies/
 sinon vous pouvez faire, mais les dépendances serait installer d'internet, risque d'incohérence de version
 #### pip install -r dependencies/requirements.txt
+
+Après, entre dans le dossier webApp une fois l'installation est finie :
+#### cd webApp
+Et ensuite :
+#### python app.py
