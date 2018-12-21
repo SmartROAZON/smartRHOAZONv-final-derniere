@@ -22,7 +22,9 @@ pip install -r dependencies/requirement.txt
 ```
 Après, entre dans le dossier webApp
 ### vous devez absolument être dans le dossier webApp pour lancer app.py, python webApp/app.py ne marchera pas !
-#### cd webApp 
+```
+cd webApp 
+```
 Et ensuite :
 #### python app.py
 
