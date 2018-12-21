@@ -9,33 +9,20 @@ Ce projet est un version portable d'un environnement virtuel c'est à dire, pour
 #### pip install virtualenv
 Ensuite mettez vous à la racine du projet (repository), et lancer la commande :
 #### Scripts\activate
+
+
+Ensuite, Installer les différentes dépendances qui se trouve dans le dossier "dependencies", grace au fichier requirment.txt 
+qui se trouve un fichier à l'intérieur :
+#### pip install -r dependencies/requirement.txt
 Après, entre dans le dossier webApp
-#### cd webApp
+### vous devez absolument être dans le dossier webApp pour lancer app.py, python webApp/app.py ne marchera pas !
+#### cd webApp 
 Et ensuite :
 #### python app.py
 
 
 
-
-
-
-Si cela ne suffie pas, créer votre propre environnement, et lancer l'app.py
-### Pour Créer l'environnement de l'application
-Commencer par :
-#### pip install virtualenv
-Apres :
-#### Scripts\activate
-Ensuite, Installer les différentes dépendances qui se trouve dans le dossier "dependencies", à l'intérieur de se dossier se trouve un fichier requirment.txt et un dossier wheels
-Vous pouvez installer ces dépendances à partir des fichiers whl par la commande suivante à la racine du projet :
-#### pip install -r dependencies/requirement.txt --find-links dependencies/wheelsdependencies/
-sinon vous pouvez faire, mais les dépendances serait installer d'internet, risque d'incohérence de version
-#### pip install -r dependencies/requirement.txt
-
-Si cela persiste installer directement tous les whl avec la commande :
-####Pour windows :
+### Bonus (risque de ne pas marcher):
+Pour une version windows x86, vous pouvez essayer d'installer directement les dependances dans le dossier des wheels (dependencies/wheelsdependencies) avec la commande :
 #### for %x in (dir dependencies/wheelsdependencies/*.whl) do python -m pip install %x
 
-Après, entre dans le dossier webApp une fois l'installation est finie :
-#### cd webApp
-Et ensuite :
-#### python app.py
