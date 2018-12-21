@@ -32,8 +32,8 @@ python app.py
 Ensuite lancer votre navigateur et connecter vous à l'adresse :
 * http://127.0.0.1:5000/
 
-### Bonus (risque de ne pas marcher):
-1. Pour une version windows x86, vous pouvez essayer d'installer directement les dependances dans le dossier des wheels (dependencies/wheelsdependencies) avec la commande :
+### Bonus 
+1. (risque de ne pas marcher)Pour une version windows x86, vous pouvez essayer d'installer directement les dependances dans le dossier des wheels (dependencies/wheelsdependencies) avec la commande :
 ```
 for %x in (dir dependencies/wheelsdependencies/*.whl) do python -m pip install %x
 ```
