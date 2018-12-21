@@ -6,18 +6,18 @@
 Ceci est pour une version de Python 3.7
 
 Ce projet est un version portable d'un environnement virtuel c'est à dire, pour lancer le projet vous aller avoir besoin de virtualenv, qui peut être installer avec la commande :
-```python
+```
 pip install virtualenv
 
 ```
 Ensuite mettez vous à la racine du projet (repository), et lancer la commande :
-```windows
+```
 Scripts\activate
 ```
 
 Ensuite, Installer les différentes dépendances qui se trouve dans le dossier "dependencies", grace au fichier requirment.txt 
 qui se trouve un fichier à l'intérieur :
-```python
+```
 pip install -r dependencies/requirement.txt
 ```
 Après, entre dans le dossier webApp
@@ -26,11 +26,13 @@ Après, entre dans le dossier webApp
 cd webApp 
 ```
 Et ensuite :
-#### python app.py
-
+```
+python app.py
+```
 
 
 ### Bonus (risque de ne pas marcher):
 Pour une version windows x86, vous pouvez essayer d'installer directement les dependances dans le dossier des wheels (dependencies/wheelsdependencies) avec la commande :
-#### for %x in (dir dependencies/wheelsdependencies/*.whl) do python -m pip install %x
-
+```
+for %x in (dir dependencies/wheelsdependencies/*.whl) do python -m pip install %x
+```
