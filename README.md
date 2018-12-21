@@ -6,7 +6,7 @@
 Ceci est pour une version de Python 3.7
 
 Ce projet est un version portable d'un environnement virtuel c'est à dire, pour lancer le projet vous aller avoir besoin de virtualenv, qui peut être installer avec la commande :
-#### pip install virtualenv
+* pip install virtualenv
 Ensuite mettez vous à la racine du projet (repository), et lancer la commande :
 #### Scripts\activate
 
