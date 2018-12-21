@@ -29,7 +29,7 @@ Et ensuite :
 ```
 python app.py
 ```
-Ensuite lancer connecter vous à l'adresse :
+Ensuite lancer votre navigateur et connecter vous à l'adresse :
 * http://127.0.0.1:5000/
 
 ### Bonus (risque de ne pas marcher):
