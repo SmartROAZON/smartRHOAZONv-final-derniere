@@ -29,9 +29,10 @@ Et ensuite :
 ```
 python app.py
 ```
-Ensuite lancer votre navigateur et connecter vous à l'adresse :
+#### Maintenant que le serveur est lancé 
+Lancer votre navigateur et connecter vous à l'adresse :
 * http://127.0.0.1:5000/
-
+## Vous pouvez vous connecter meme avec votre telephonne ou tablette pour travailler sur la plateforme !
 ### Bonus 
 1. (risque de ne pas marcher)Pour une version windows x86, vous pouvez essayer d'installer directement les dependances dans le dossier des wheels (dependencies/wheelsdependencies) avec la commande :
 ```
