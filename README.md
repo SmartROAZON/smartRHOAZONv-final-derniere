@@ -27,9 +27,13 @@ Apres :
 #### Scripts\activate
 Ensuite, Installer les différentes dépendances qui se trouve dans le dossier "dependencies", à l'intérieur de se dossier se trouve un fichier requirment.txt et un dossier wheels
 Vous pouvez installer ces dépendances à partir des fichiers whl par la commande suivante à la racine du projet :
-#### pip install -r dependencies/requirements.txt --find-links dependencies/wheelsdependencies/
+#### pip install -r dependencies/requirement.txt --find-links dependencies/wheelsdependencies/
 sinon vous pouvez faire, mais les dépendances serait installer d'internet, risque d'incohérence de version
-#### pip install -r dependencies/requirements.txt
+#### pip install -r dependencies/requirement.txt
+
+Si cela persiste installer directement tous les whl avec la commande :
+####Pour windows :
+#### for %x in (dir dependencies/wheelsdependencies/*.whl) do python -m pip install %x
 
 Après, entre dans le dossier webApp une fois l'installation est finie :
 #### cd webApp
