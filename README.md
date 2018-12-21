@@ -1,9 +1,6 @@
-"# smartROAZHON" 
-"# smartROAZHON.v2" 
-"# smartRHOAZONv-final" 
-"# smartRHOAZONv-final-derniere" 
+## smartRHOAZONv-final-derniere
 
-Ceci est pour une version de Python 3.7
+#### Ceci est pour une version de Python 3.7
 
 Ce projet est un version portable d'un environnement virtuel c'est à dire, pour lancer le projet vous aller avoir besoin de virtualenv, qui peut être installer avec la commande :
 ```
@@ -21,7 +18,11 @@ qui se trouve un fichier à l'intérieur :
 pip install -r dependencies/requirement.txt
 ```
 Après, entre dans le dossier webApp
-### vous devez absolument être dans le dossier webApp pour lancer app.py, python webApp/app.py ne marchera pas !
+
+```diff
+-  vous devez absolument être dans le dossier webApp pour lancer app.py, python webApp/app.py ne marchera pas !
+```
+
 ```
 cd webApp 
 ```
